@@ -15,4 +15,33 @@ https://discourse.getdbt.com/t/how-to-create-near-real-time-models-with-just-dbt
    `python -m pip install dbt-sqlserver`
 
 ## Git Setup
+```
+git init
+git add ReadMe.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/aj-22/realtime-dbt.git
+git push -u origin main
+```
 
+## Initialize and set-up dbt
+1. Initialize: `dbt init`
+2. Get location of `profiles.yml`: `dbt debug --config-dir`
+3. Enter connection parameters
+```yml
+analytics:
+  target: dev
+  outputs:
+    dev:
+      type: sqlserver
+      driver: ODBC Driver 18 for SQL Server
+      server: localhost
+      port: 1435
+      database: analytics
+      schema: dev
+      user: sa
+      password: ********
+      encrypt: false
+      trust_cert: false
+```
+4. Test if connection works `dbt debug`

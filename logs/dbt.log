@@ -1,0 +1,55 @@
+
+
+============================== 2024-01-15 11:04:26.700319 | ebde4934-687b-4eb7-95ff-5fc295bd37f7 ==============================
+[0m11:04:26.700319 [info ] [MainThread]: Running with dbt=1.4.9
+[0m11:04:26.705828 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\ajink\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m11:04:26.705828 [debug] [MainThread]: Tracking: tracking
+[0m11:04:26.740068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001683AA32890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016839CF6410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001683AA31DD0>]}
+[0m11:05:40.119184 [debug] [MainThread]: Starter project path: C:\projects\realtime-dbt\env\Lib\site-packages\dbt\include\starter_project
+[0m11:05:47.432014 [info ] [MainThread]: No sample profile found for sqlserver.
+[0m11:05:47.432014 [info ] [MainThread]: 
+Your new dbt project "analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:05:47.437541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001683A42AFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001683A14EC50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001683AA3B510>]}
+[0m11:05:47.437541 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2024-01-15 11:09:08.786346 | ef5e8112-a71a-4c1b-88af-8de0bf250491 ==============================
+[0m11:09:08.786346 [info ] [MainThread]: Running with dbt=1.4.9
+[0m11:09:08.786346 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\ajink\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': True, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m11:09:08.786346 [debug] [MainThread]: Tracking: tracking
+[0m11:09:08.814342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D049DCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D0BDB910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D066A950>]}
+[0m11:09:08.814342 [info ] [MainThread]: To view your profiles.yml file, run:
+
+start C:\Users\ajink\.dbt
+[0m11:09:08.814342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D066B390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D0BDB910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8D05A3DD0>]}
+[0m11:09:08.818344 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2024-01-15 11:23:28.251434 | 9e471f4f-6912-4060-86c1-b9fc6319a872 ==============================
+[0m11:23:28.251434 [info ] [MainThread]: Running with dbt=1.4.9
+[0m11:23:28.255415 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\ajink\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m11:23:28.255415 [debug] [MainThread]: Tracking: tracking
+[0m11:23:28.271892 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1C6644050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1C5E78DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1C5F433D0>]}
+[0m11:23:28.284022 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.snowflake'
+[0m11:23:28.292016 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.postgres'
+[0m11:23:28.300014 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.postgres'
+[0m11:23:28.312066 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.snowflake'
+[0m11:23:28.540083 [debug] [MainThread]: Executing "git --help"
+[0m11:23:28.642754 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:23:28.642754 [debug] [MainThread]: STDERR: "b''"
+[0m11:23:28.645764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1C2322C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1C661D010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1C6C2A950>]}
+[0m11:23:28.647642 [debug] [MainThread]: Flushing usage events
