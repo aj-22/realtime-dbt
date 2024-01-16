@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: bronze_transactions_hist
+    config:
+      materialized: incremental
+      unique_key: transaction_id
+  - name: bronze_transactions_curr
+    config:
+      materialized: view
+  - name: bronze_products
+    config: 
+      materialized: table
+  - name: bronze_customers
+    config:
+      materialized: table

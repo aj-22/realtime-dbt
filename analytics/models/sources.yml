@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: source_data
+    database: analytics  
+    schema: dbo  
+    tables:
+      - name: products
+      - name: customers
+      - name: stg_transaction
