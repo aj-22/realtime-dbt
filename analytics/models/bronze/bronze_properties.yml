@@ -4,7 +4,7 @@ models:
   - name: bronze_transactions_hist
     config:
       materialized: incremental
-      unique_key: transaction_id
+      unique_key: row_id
   - name: bronze_transactions_curr
     config:
       materialized: view

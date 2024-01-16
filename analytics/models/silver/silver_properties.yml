@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: silver_details_curr
+    config:
+      materialized: view
+
+  - name: silver_details_hist
+    config:
+      materialized: incremental
+      unique_key: row_id
