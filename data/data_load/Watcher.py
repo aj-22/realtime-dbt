@@ -16,7 +16,6 @@ class Handler(FileSystemEventHandler):
         elif event.event_type == 'created':
             # Event is created, you can process it now
             print("Received created event - % s." % event.src_path)
-            
             Handler.sql.load_json(Handler.cwd+event.src_path[1:])
 
 
