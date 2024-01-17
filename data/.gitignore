@@ -1,0 +1,3 @@
+output\transactions\*
+data_load\__pycache__
+data_gen\__pycache__
