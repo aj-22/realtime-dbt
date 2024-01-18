@@ -35,7 +35,7 @@ class TransactionUtility:
         t = self.transaction.generate_transaction()
         with open(self.output_dir + '\\file_' + str(int(time.time())) + '.json', 'w') as f:
             f.write(json.dumps(t))
-        sleep_time = random.randint(1,5)
+        sleep_time = random.randint(5,10)
         time.sleep(sleep_time)
 
     def multi_write(self):

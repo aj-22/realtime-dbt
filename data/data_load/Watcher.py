@@ -16,12 +16,12 @@ class Handler(FileSystemEventHandler):
         if event.is_directory:
             return None
         elif event.event_type == 'created':
-            sql = SQL()
+            sql_obj = SQL()
             # Event is created, you can process it now
             path = Handler.cwd+event.src_path[1:]
             print("Received created event - % s." % path)
-            sql.load_json(path)
-            del sql
+            sql_obj.load_json(path)
+            del sql_obj
 
 
 class Watch:
