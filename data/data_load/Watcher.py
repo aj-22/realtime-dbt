@@ -1,12 +1,14 @@
 import time
+import sys
 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
+sys.path.append('..')
+from database_connect.connection import SQL
+
 class Handler(FileSystemEventHandler):
-    sql = None
-    def __init__(self, sql, cwd):
-        Handler.sql = sql
+    def __init__(self, cwd):
         Handler.cwd = cwd
 
     @staticmethod
@@ -14,20 +16,22 @@ class Handler(FileSystemEventHandler):
         if event.is_directory:
             return None
         elif event.event_type == 'created':
+            sql = SQL()
             # Event is created, you can process it now
-            print("Received created event - % s." % event.src_path)
-            Handler.sql.load_json(Handler.cwd+event.src_path[1:])
+            path = Handler.cwd+event.src_path[1:]
+            print("Received created event - % s." % path)
+            sql.load_json(path)
+            del sql
 
 
 class Watch:
-    def __init__(self, sql, directory_to_watch, cwd):
+    def __init__(self, directory_to_watch, cwd):
         self.observer = Observer()
-        self.sql = sql
         self.directory_to_watch = directory_to_watch
         self.cwd = cwd
 
     def run(self):
-        event_handler = Handler(self.sql, self.cwd)
+        event_handler = Handler(self.cwd)
         self.observer.schedule(event_handler, self.directory_to_watch, recursive=False)
         self.observer.start()
         try:
@@ -37,8 +41,3 @@ class Watch:
             self.observer.stop()
         self.observer.join()
 
-
-if __name__ == '__main__':
-    print('Starting data-load...')
-    watch = Watch()
-    watch.run()

@@ -47,6 +47,7 @@ class SQL:
         SELECT BulkColumn, current_timestamp as loaded_at
         FROM OPENROWSET(BULK '{}', SINGLE_CLOB) as j
         '''.format(filename)
+        print('JSON load')
         self.cursor.execute(sql_statement)
         self.cursor.commit()
 
