@@ -12,8 +12,6 @@ class Password:
 
 
 class SQL:
-    conn = None
-    cursor = None
     def __init__(self, password = None):
         server = r'BOOK-8V0G45AGTL\MSSQLSERVER01'
         db = 'analytics'
@@ -47,7 +45,6 @@ class SQL:
         SELECT BulkColumn, current_timestamp as loaded_at
         FROM OPENROWSET(BULK '{}', SINGLE_CLOB) as j
         '''.format(filename)
-        print('JSON load')
         self.cursor.execute(sql_statement)
         self.cursor.commit()
 
@@ -58,5 +55,4 @@ class SQL:
         return random.choice(rows)
 
     def __del__(self):
-        if self.conn is not None:
-            self.conn.close()
+        self.conn.close()
