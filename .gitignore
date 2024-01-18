@@ -1,0 +1,9 @@
+
+analytics/target/
+analytics/dbt_packages/
+analytics/logs/
+data/output/transactions/*
+data/data_load/__pycache__/
+data/data_gen/__pycache__/
+data/database_connect/__pycache__/
+logs/

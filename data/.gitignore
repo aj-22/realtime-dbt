@@ -1,4 +1,0 @@
-output/transactions/*
-data_load/__pycache__
-data_gen/__pycache__
-database_connect/__pycache__
