@@ -1,0 +1,27 @@
+version: 2
+
+seeds:
+  - name: products
+    config:
+      schema: dbo
+      column_types:
+        product_id: varchar(50)
+        product_name: varchar(50)
+        category: varchar(50)
+        price: decimal(18,4)
+
+  - name: customers
+    config:
+      schema: dbo
+      column_types: 
+        customer_id: varchar(50)
+        first_name: varchar(50)
+        last_name: varchar(50)
+        city: varchar(50)
+
+  - name: stg_transaction
+    config:
+      schema: dbo
+      column_types: 
+        BulkColumn: varchar(max)
+        loaded_at: datetime
