@@ -10,7 +10,7 @@ def load_dims():
     dims.write_data(products,'.\\output','products.csv')
     dims.write_data(customers, '.\\output', 'customers.csv')
 
-def transact(number = 5, sql = sql):
+def transact(number = 10, sql = sql):
     output_dir = '.\\output\\transactions\\'
     transaction = facts.TransactionUtility(number, output_dir, sql)
     transaction.multi_write()
