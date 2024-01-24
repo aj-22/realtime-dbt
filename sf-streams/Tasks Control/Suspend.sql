@@ -1,0 +1,2 @@
+alter task REFINE_TASK SUSPEND;
+alter task PROCESS_FILES_TASK SUSPEND;

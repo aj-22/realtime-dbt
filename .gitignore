@@ -8,3 +8,5 @@ data/data_gen/entities/__pycache__
 data/data_gen/__pycache__/
 data/database_connect/__pycache__/
 logs/
+.dbeaver/
+.project

@@ -1,0 +1,2 @@
+alter task REFINE_TASK RESUME;
+alter task PROCESS_FILES_TASK RESUME;

@@ -4,6 +4,15 @@ The dbt Engineers wrote community blog post on achieving realtime analytics with
 
 https://discourse.getdbt.com/t/how-to-create-near-real-time-models-with-just-dbt-sql/1457
 
+Additionally, this project also attempts to compare the above approach against Snowflake Streams. 
+
+Reference Article: https://quickstarts.snowflake.com/guide/getting_started_with_streams_and_tasks/index.html
+
+# Approaches to real time analytics
+
+1. Lambda View (Using SQL Server. But it should be Database Agnostic)
+2. Snowflake Streams
+
 # Steps:
 
 ## Initial Setup - Directory, Python
@@ -63,3 +72,19 @@ analytics:
 ```
 4. Test if connection works: `dbt debug`
 
+## Project Set Up
+1. Update database_connect/connection.py file 
+2. Execute `dbt seed` to load source data and `dbt run` to create incremental models and fresh view
+3. Run `loader.py` to set up event based data loading
+4. Run `generator.py` to create the transaction files
+5. Verify if data is getting loaded successfully in database
+6. Execute `dbt run` to start a batch job
+
+## Set up Snowflake and Dbeaver
+
+1. Create Snowflake free trial account
+2. Install DBeaver
+3. Install Git plugin for DBeaver
+4. Clone this repo in local (if not already done)
+5. Open the project from DBeaver's Git plugin
+6. Set up Snowflake Connection in DBeaver
