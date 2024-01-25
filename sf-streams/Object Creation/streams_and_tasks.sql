@@ -21,13 +21,13 @@ city varchar,
 product_name varchar,
 category varchar,
 price varchar,
-loaded_at datetime
+created_at datetime
 );
 
 create or replace task REFINE_TASK
 USER_TASK_MANAGED_INITIAL_WAREHOUSE_SIZE = 'XSMALL'
 SCHEDULE = '1 minute'
-COMMENT = '2.  ELT Process New Transactions in Landing/Staging Table into a more Normalized/Refined Table (flattens JSON payloads)'
+COMMENT = '2.  ELT Process New Transactions in Staging Table into a more Normalized/Refined Table (flattens JSON payloads)'
 when
 SYSTEM$STREAM_HAS_DATA('CC_TRANS_STAGING_VIEW_STREAM')
 as
@@ -41,10 +41,10 @@ C."CITY",
 P."PRODUCT_NAME",
 P."CATEGORY",
 P."PRICE",
-s.TS AS Loaded_at
+s.created_at AS created_at
 FROM 
 (select                     
-TRANSACTION_ID, CUSTOMER_ID, product.value AS PRODUCT_ID, ts
+TRANSACTION_ID, CUSTOMER_ID, product.value AS PRODUCT_ID, created_at
 from CC_TRANS_STAGING_VIEW_STREAM,
 lateral flatten (basket) product) s
 LEFT JOIN Products P ON P."PRODUCT_ID" = S.Product_id
@@ -54,3 +54,6 @@ LEFT JOIN CUSTOMERS C ON C."CUSTOMER_ID" = S.Customer_ID
 EXECUTE TASK refine_task;
 
 select * from CC_TRANS_ALL;
+
+
+SELECT * FROM CC_TRANS_STAGING_VIEW_STREAM;

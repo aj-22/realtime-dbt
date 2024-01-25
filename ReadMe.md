@@ -4,9 +4,13 @@ The dbt Engineers wrote community blog post on achieving realtime analytics with
 
 https://discourse.getdbt.com/t/how-to-create-near-real-time-models-with-just-dbt-sql/1457
 
-Additionally, this project also attempts to compare the above approach against Snowflake Streams. 
+Additionally, this project also attempts to compare the above approach against Snowflake Streams and Dynamic Tables. 
 
-Reference Article: https://quickstarts.snowflake.com/guide/getting_started_with_streams_and_tasks/index.html
+Reference Article:
+
+Streams and Tasks: https://quickstarts.snowflake.com/guide/getting_started_with_streams_and_tasks/index.html
+
+Dynamic Tables: https://quickstarts.snowflake.com/guide/getting_started_with_dynamic_tables/index.html
 
 # Approaches to real time analytics
 
