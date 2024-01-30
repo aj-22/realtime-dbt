@@ -1,0 +1,1 @@
+select * from {{ ref('transactions_json_unload') }}

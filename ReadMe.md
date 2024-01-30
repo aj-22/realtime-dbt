@@ -16,6 +16,7 @@ Dynamic Tables: https://quickstarts.snowflake.com/guide/getting_started_with_dyn
 
 1. Lambda View (Using SQL Server. But it should be Database Agnostic)
 2. Snowflake Streams
+3. Dynamic Table in Snowflake (with dbt https://docs.getdbt.com/reference/resource-configs/snowflake-configs)
 
 # Steps:
 

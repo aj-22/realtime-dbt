@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: transactions_json_unload
+    config:
+      materialized: dynamic_table
+      on_configuration_change: apply
+      target_lag: downstream
+      snowflake_warehouse: VHOL_WH
+
+  - name: transactions_joins
+    config:
+      materialized: dynamic_table
+      on_configuration_change: apply
+      target_lag: downstream
+      snowflake_warehouse: VHOL_WH

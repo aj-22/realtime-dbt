@@ -1,0 +1,12 @@
+
+version: 2
+
+sources:
+  - name: staging
+    database: VHOL_ST
+    schema: public
+    tables:
+      - name: CUSTOMERS
+      - name: PRODUCTS
+      - name: CC_TRANS_STAGING
+
