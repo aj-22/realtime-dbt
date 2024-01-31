@@ -1,16 +1,20 @@
 version: 2
 
 models:
-  - name: transactions_json_unload
+  - name: staging
+    config:
+      materialized: table
+
+  - name: intermediate
     config:
       materialized: dynamic_table
       on_configuration_change: apply
       target_lag: downstream
       snowflake_warehouse: VHOL_WH
 
-  - name: transactions_joins
+  - name: analytical
     config:
       materialized: dynamic_table
       on_configuration_change: apply
-      target_lag: downstream
+      target_lag: 60 seconds
       snowflake_warehouse: VHOL_WH

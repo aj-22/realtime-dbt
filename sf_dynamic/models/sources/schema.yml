@@ -9,4 +9,11 @@ sources:
       - name: CUSTOMERS
       - name: PRODUCTS
       - name: CC_TRANS_STAGING
+      - name: VHOL_STAGE_VIEW
+
+  - name: staging_table
+    database: VHOL_ST
+    schema: dbt_dynamic
+    tables:
+      - name: staging
 

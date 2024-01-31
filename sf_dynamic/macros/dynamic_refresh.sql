@@ -1,19 +1,31 @@
 {% macro dynamic_refresh(refresh_state) %}
 
-{% if refresh_state in ['RESUME','resume','suspend','SUSPEND'] %}
+{% if refresh_state in ['RESUME','SUSPEND','REFRESH'] %}
 
-{% set sql %}
-    ALTER DYNAMIC TABLE {{ ref('transactions_json_unload') }} {{ refresh_state }};
-    ALTER DYNAMIC TABLE {{ ref('transactions_joins') }} {{ refresh_state }};
-{% endset %}
+    {% if refresh_state == 'REFRESH' %}
+        {% set sql %}
+            EXECUTE TASK "VHOL_ST".PUBLIC.PROCESS_FILES_DBT_DYNAMIC;
+        {% endset %}
+        {% do run_query(sql) %}
+    {% else %}
+        {% set sql %}
+            ALTER TASK "VHOL_ST".PUBLIC.PROCESS_FILES_DBT_DYNAMIC {{ refresh_state }};
+        {% endset %}
+        {% do run_query(sql) %}
+    {% endif %}
 
-{% do run_query(sql) %}
+    {% set sql %}
+        ALTER DYNAMIC TABLE {{ ref('intermediate') }} {{ refresh_state }};
+        ALTER DYNAMIC TABLE {{ ref('analytical') }} {{ refresh_state }};
+    {% endset %}
 
-{% do log( refresh_state + " Successful", info=True) %}
+    {% do run_query(sql) %}
+
+    {% do log( refresh_state + " Successful", info=True) %}
 
 {% else %}
 
-{% do log("Invalid Option", info=True) %}
+    {% do log("Invalid Option", info=True) %}
 
 {% endif %}
 

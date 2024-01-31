@@ -1,1 +1,1 @@
-select * from {{ ref('transactions_joins') }}
+select * from {{ ref('intermediate') }}

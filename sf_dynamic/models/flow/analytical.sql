@@ -8,6 +8,6 @@ P."PRODUCT_NAME",
 P."CATEGORY",
 P."PRICE",
 s.created_at AS created_at
-FROM {{ ref('transactions_json_unload') }} s
+FROM {{ ref('intermediate') }} s
 LEFT JOIN {{ source('staging', 'PRODUCTS') }} P ON P."PRODUCT_ID" = S.Product_id
 LEFT JOIN {{ source('staging', 'CUSTOMERS') }} C ON C."CUSTOMER_ID" = S.Customer_ID
