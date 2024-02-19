@@ -93,3 +93,28 @@ analytics:
 4. Clone this repo in local (if not already done)
 5. Open the project from DBeaver's Git plugin
 6. Set up Snowflake Connection in DBeaver
+
+
+## Execution
+Open three CMD Terminals
+
+On Terminal 1, run following commands
+```cmd
+env\Scripts\activate.bat
+cd realtime-dbt\data
+python loader.py
+```
+
+On Terminal 2, run following commands
+```cmd
+env\Scripts\activate.bat
+cd realtime-dbt\data
+python generator.py
+```
+
+On Terminal 3,  run following commands
+```cmd
+env\Scripts\activate.bat
+cd realtime-dbt\analytics
+dbt run 
+```
